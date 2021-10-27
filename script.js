@@ -1,4 +1,5 @@
 var audio = new Audio('audio.mp3');
+var img = document.getElementById('img')
 var score;
 if(typeof localStorage.getItem('score') != NaN){
     score = localStorage.getItem('score')
@@ -28,3 +29,11 @@ function clearImg(){
     audio.pause()
     audio.currentTime = 0;
 }
+
+img.addEventListener('touchstart', () => {
+    changeImg()
+})
+
+img.addEventListener('touchend', () => {
+    clearImg()
+})
