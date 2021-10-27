@@ -1,5 +1,6 @@
 var audio = new Audio('audio.mp3');
 var img = document.getElementById('img')
+var area = document.getElementById('clickArea')
 var score;
 if(typeof localStorage.getItem('score') != NaN){
     score = localStorage.getItem('score')
@@ -12,7 +13,8 @@ if(typeof localStorage.getItem('score') != NaN){
 function changeImg(){
     const img = document.getElementById('img')
     img.src="/img/no-background-rick-smile.png";
-
+    audio.pause()
+    audio.currentTime =0;
     audio.play();
     score++
     if(typeof localStorage.getItem('score') != NaN){
@@ -26,14 +28,47 @@ function changeImg(){
 function clearImg(){
     const img = document.getElementById('img')
     img.src="/img/no-background-rick.png";
-    audio.pause()
-    audio.currentTime = 0;
 }
 
-img.addEventListener('touchstart', () => {
-    changeImg()
+var muted = false
+function mute () {
+    if(muted == false){
+        document.getElementById('mute-b').className = 'fas fa-volume-mute fa-5x'
+        console.log('muted')
+        muted = true
+        audio.pause()
+        audio = NaN;
+    }else{
+        document.getElementById('mute-b').className = 'fas fa-volume-up fa-5x'
+        muted = false
+        audio = new Audio('audio.mp3');
+        console.log("unmuted")
+    }
+}
+
+var mute_b = document.getElementById('mute-b')
+
+mute_b.addEventListener('mousedown', () => {
+    mute()
 })
 
-img.addEventListener('touchend', () => {
-    clearImg()
-})
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ||
+   (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.platform))) {
+    area.addEventListener('touchstart', () => {
+        changeImg()
+    })
+
+    area.addEventListener('touchend', () => {
+        clearImg()
+    })
+
+}else{
+
+    area.addEventListener('mousedown', () => {
+        changeImg()
+    })
+
+    area.addEventListener('mouseup', () => {
+        clearImg()
+    })
+}

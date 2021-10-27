@@ -1,15 +1,20 @@
-<html oncontextmenu="return false">
+<html>
     <head>
         <link rel="stylesheet" href="/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/9982bffe41.js" crossorigin="anonymous"></script>
     </head> 
     
     <body>
+        <i class="fas fa-volume-up fa-5x" id="mute-b"></i>
         <p id="title">POPRICK</p>
         <div id='score'></div>
-        <img id="img" onmousedown="changeImg()" onmouseup="clearImg()" width="770" height="858" src="/img/no-background-rick.png"></img>
+
+        <div id="clickArea">
+            <img id="img" width="770" height="858" src="/img/no-background-rick.png"></img>
+        </div>
     </body>
     <script src="/script.js"></script>
     </html>

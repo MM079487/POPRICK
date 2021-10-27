@@ -25,6 +25,14 @@ html {
     z-index: 2;
 }
 
+#mute-b {
+    position: absolute;
+    top: 4%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
 #img {
     width: 600px;
     height: auto;
