@@ -11,17 +11,21 @@ if(typeof localStorage.getItem('score') != NaN){
 }
 
 function changeImg(){
-    const img = document.getElementById('img')
-    img.src="/img/no-background-rick-smile.png";
-    audio.pause()
-    audio.currentTime =0;
-    audio.play();
-    score++
-    if(typeof localStorage.getItem('score') != NaN){
-        if(localStorage.getItem('score') < score){
-            localStorage.setItem('score', score)
-            document.getElementById('score').innerText=score;
+    try{
+        const img = document.getElementById('img')
+        img.src="/img/no-background-rick-smile.png";
+        audio.pause()
+        audio.currentTime =0;
+        audio.play();
+        score++
+        if(typeof localStorage.getItem('score') != NaN){
+            if(localStorage.getItem('score') < score){
+                localStorage.setItem('score', score)
+                document.getElementById('score').innerText=score;
+            }
         }
+    }catch (err){
+        return true
     }
 }
 

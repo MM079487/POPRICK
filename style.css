@@ -3,6 +3,7 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Bebas Neue', cursive;
+    touch-action: manipulation;
 }
 
 #title{
