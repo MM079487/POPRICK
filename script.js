@@ -14,9 +14,6 @@ function changeImg(){
     try{
         const img = document.getElementById('img')
         img.src="/img/no-background-rick-smile.png";
-        audio.pause()
-        audio.currentTime =0;
-        audio.play();
         score++
         if(typeof localStorage.getItem('score') != NaN){
             if(localStorage.getItem('score') < score){
@@ -24,6 +21,9 @@ function changeImg(){
                 document.getElementById('score').innerText=score;
             }
         }
+        audio.pause()
+        audio.currentTime =0;
+        audio.play();
     }catch (err){
         return true
     }
