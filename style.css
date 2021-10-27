@@ -5,7 +5,6 @@ html {
     font-family: 'Bebas Neue', cursive;
     touch-action: manipulation;
 }
-
 #title{
     font-size: 100px;
     position: absolute;
@@ -41,4 +40,8 @@ html {
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+#preload {
+    display: none;
 }
