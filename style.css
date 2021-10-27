@@ -43,6 +43,10 @@ html {
     top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
 }
 
 #preload {
