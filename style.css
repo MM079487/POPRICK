@@ -5,24 +5,27 @@ html {
     font-family: 'Bebas Neue', cursive;
     touch-action: manipulation;
 }
-#title{
-    font-size: 100px;
+
+.text {
     position: absolute;
-    top: -10px;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    color: white;
 }
 
-#score {
-    position: absolute;
-    top: 18%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 80px;
+#title {
     color: white;
-    z-index: 2;
+    z-index: 1;
+    font-size: 5em;
+    text-align: center;
+}
+
+#score{
+    color: white;   
+    font-size: 5em;
+    text-align: center;
+    margin-top: -1em;
 }
 
 #mute-b {
@@ -34,14 +37,25 @@ html {
 }
 
 #img {
-    width: 600px;
+    width: 500px;
     height: auto;
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 #preload {
     display: none;
+}
+
+.youtube {
+    position: absolute;
+    top: 90%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+    color: red;
+    text-decoration: none;
+    text-align: center;
+    font-size: 30px;
 }
