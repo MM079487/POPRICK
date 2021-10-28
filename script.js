@@ -2,12 +2,22 @@ var audio = new Audio('audio.mp3');
 var img = document.getElementById('img')
 var area = document.body
 var score;
+
 if(typeof localStorage.getItem('score') != NaN){
     score = localStorage.getItem('score')
     document.getElementById('score').innerText=score;
 }else{
     score = 0;
     document.getElementById('score').innerText='0';
+}
+
+checkScore()
+
+function checkScore(){
+    if(score > 9999){
+        document.getElementById('score').style.color="red";
+        document.title="POPRICK [Pro Mode]"
+    }
 }
 
 function changeImg(){
@@ -19,6 +29,7 @@ function changeImg(){
             if(localStorage.getItem('score') < score){
                 localStorage.setItem('score', score)
                 document.getElementById('score').innerText=score;
+                checkScore()
             }
         }
         audio.pause()
