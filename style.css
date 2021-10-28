@@ -4,6 +4,10 @@ html {
     background-size: cover;
     font-family: 'Nunito', sans-serif;
     touch-action: manipulation;
+    -webkit-user-select:none;
+    -moz-user-select:-moz-none;
+    -ms-user-select:none;
+    user-select:none  
 }
 
 .text {

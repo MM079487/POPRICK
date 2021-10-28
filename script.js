@@ -1,6 +1,6 @@
 var audio = new Audio('audio.mp3');
 var img = document.getElementById('img')
-var area = document.getElementById('clickArea')
+var area = document.body
 var score;
 if(typeof localStorage.getItem('score') != NaN){
     score = localStorage.getItem('score')
@@ -25,7 +25,7 @@ function changeImg(){
         audio.currentTime =0;
         audio.play();
     }catch (err){
-        return true
+        return false
     }
 }
 
