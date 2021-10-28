@@ -75,4 +75,12 @@ if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ||
     area.addEventListener('mouseup', () => {
         clearImg()
     })
+
+    area.addEventListener('keydown', () => {
+        changeImg()
+    })
+
+    area.addEventListener('keyup', () => {
+        clearImg()
+    })
 }
